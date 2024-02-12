@@ -30,9 +30,7 @@ enum Marshmallow {
 
 function iceCream(size: Size, topping: Topping, marshmallow?: Marshmallow) {
     const domElement: HTMLDivElement = document.createElement("div");
-    orderSize();
-    orderTopping();
-    orderMarshmallow();
+    
 
 var price1:number;
 var price2:number;
@@ -68,6 +66,9 @@ switch (marshmallow) {
         price3 = 0;
         break;
 }
+    orderSize();
+    orderTopping();
+    orderMarshmallow();
 var total: number = price1 + price2 + price3;
 document.body.appendChild(domElement);
 return total;
@@ -77,13 +78,19 @@ var result = iceCream(Size.Large, Topping.Caramel, Marshmallow.Yes);
 console.log(result);
 
 function orderSize() {
-    prompt("Enter size");
+    var message:string;
+    message = prompt("Enter size");
+    document.getElementById("demo1").innerHTML = message;
 }
 
 function orderTopping() {
-    prompt("Enter topping");
+    var message:string;
+    message = prompt("Enter topping");
+    document.getElementById("demo2").innerHTML = message;
 }
 
 function orderMarshmallow() {
-    prompt("Enter marshmallow (if you want)");
+    var message:string;
+    message = prompt("Enter marshmellow (if you want)");
+    document.getElementById("demo3").innerHTML = message;
 }

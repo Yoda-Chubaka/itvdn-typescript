@@ -3,8 +3,9 @@
         "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
-        "sourceMap": true,
-        "outDir": "./dist"
+        "sourceMap": false,
+        "outDir": "./dist",
+        "lib": ["dom", "es2015"]
     },
     "include": ["./**/*.ts"],
     "exclude": ["node_modules"]

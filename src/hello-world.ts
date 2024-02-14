@@ -164,16 +164,47 @@
 
 
 // INTERFACES
-interface AnimalDescription {
+interface Animal {
     name?: string;
     nutrition: string;
     habitat: string;
+
+    drawAnimal: () => string;
 }
 
-function drawAnimal(animal: AnimalDescription): void {
-    if (animal.name) {
-        console.log("Name is " + animal.name);
+class Cat implements Animal {
+    name: string = "Cat";
+    nutrition: string = "mice";
+    habitat: string = "houses";
+    drawAnimal(): string {
+        return "Cats eat " + this.nutrition + " and live in the " + this.habitat
     }
-
-    console.log("It eats " + animal.nutrition + " and lives in " + animal.habitat);
 }
+
+class Bird implements Animal {
+    name: string = "Bird";
+    nutrition: string = "worms";
+    habitat: string = "trees";
+    drawAnimal(): string {
+        return "Birds eat " + this.nutrition + " and live in the " + this.habitat
+    }
+}
+
+class Fish implements Animal {
+    name: string = "Fish";
+    nutrition: string = "insects";
+    habitat: string = "rivers";
+    drawAnimal(): string {
+        return "Fish eat " + this.nutrition + " and live in the " + this.habitat
+    }
+}
+
+const animal1: Animal = new Cat();
+const animal2: Animal = new Bird();
+const animal3: Animal = new Fish();
+
+console.log(animal1.drawAnimal());
+console.log(animal2.drawAnimal());
+console.log(animal3.drawAnimal());
+
+

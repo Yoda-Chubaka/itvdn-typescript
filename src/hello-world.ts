@@ -164,47 +164,95 @@
 
 
 // INTERFACES
-interface Animal {
-    name?: string;
-    nutrition: string;
-    habitat: string;
+// interface Animal {
+//     name?: string;
+//     nutrition: string;
+//     habitat: string;
 
-    drawAnimal: () => string;
-}
+//     drawAnimal: () => string;
+// }
 
-class Cat implements Animal {
-    name: string = "Cat";
-    nutrition: string = "mice";
-    habitat: string = "houses";
-    drawAnimal(): string {
-        return "Cats eat " + this.nutrition + " and live in the " + this.habitat
+// class Cat implements Animal {
+//     name: string = "Cat";
+//     nutrition: string = "mice";
+//     habitat: string = "houses";
+//     drawAnimal(): string {
+//         return "Cats eat " + this.nutrition + " and live in the " + this.habitat
+//     }
+// }
+
+// class Bird implements Animal {
+//     name: string = "Bird";
+//     nutrition: string = "worms";
+//     habitat: string = "trees";
+//     drawAnimal(): string {
+//         return "Birds eat " + this.nutrition + " and live in the " + this.habitat
+//     }
+// }
+
+// class Fish implements Animal {
+//     name: string = "Fish";
+//     nutrition: string = "insects";
+//     habitat: string = "rivers";
+//     drawAnimal(): string {
+//         return "Fish eat " + this.nutrition + " and live in the " + this.habitat
+//     }
+// }
+
+// const animal1: Animal = new Cat();
+// const animal2: Animal = new Bird();
+// const animal3: Animal = new Fish();
+
+// console.log(animal1.drawAnimal());
+// console.log(animal2.drawAnimal());
+// console.log(animal3.drawAnimal());
+
+
+
+// GENERICS
+class myDictionary<TKey, TDescription, TValue> {
+    private _key: TKey;
+    public _description: TDescription;
+    private _value: TValue;
+
+    public set key(value: TKey) {
+        if (!value) {
+            throw new Error("Значення поля value не може бути порожнім!");
+        }
+        this._key = value;
+    }
+
+    public get key(): TKey {
+        return this._key;
+    }
+
+    public set description(value: TDescription) {
+        if (!value) {
+            throw new Error("Значення поля value не може бути порожнім!");
+        }
+        this._description = value;
+    }
+
+    public get description(): TDescription {
+        return this._description;
+    }
+
+    public set value(value: TValue) {
+        if (!value) {
+            throw new Error("Значення поля value не може бути порожнім!");
+        }
+        this._value = value;
+    }
+
+    public get value(): TValue {
+        return this._value;
     }
 }
 
-class Bird implements Animal {
-    name: string = "Bird";
-    nutrition: string = "worms";
-    habitat: string = "trees";
-    drawAnimal(): string {
-        return "Birds eat " + this.nutrition + " and live in the " + this.habitat
-    }
-}
+const vocabulary = new myDictionary<string, string, number>();
+vocabulary.key = "key1";
+vocabulary.description = "Lorem ipsum";
+vocabulary.value = 123;
 
-class Fish implements Animal {
-    name: string = "Fish";
-    nutrition: string = "insects";
-    habitat: string = "rivers";
-    drawAnimal(): string {
-        return "Fish eat " + this.nutrition + " and live in the " + this.habitat
-    }
-}
-
-const animal1: Animal = new Cat();
-const animal2: Animal = new Bird();
-const animal3: Animal = new Fish();
-
-console.log(animal1.drawAnimal());
-console.log(animal2.drawAnimal());
-console.log(animal3.drawAnimal());
-
+console.log(vocabulary);
 

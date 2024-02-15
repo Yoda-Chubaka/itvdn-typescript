@@ -249,10 +249,25 @@ class myDictionary<TKey, TDescription, TValue> {
     }
 }
 
-const vocabulary = new myDictionary<string, string, number>();
-vocabulary.key = "key1";
-vocabulary.description = "Lorem ipsum";
-vocabulary.value = 123;
+const vocabulary1 = new myDictionary<string, string, number>();
+vocabulary1.key = "key1";
+vocabulary1.description = "Lorem ipsum";
+vocabulary1.value = 123;
 
-console.log(vocabulary);
+const vocabulary2 = new myDictionary<string, string, number>();
+vocabulary2.key = "key2";
+vocabulary2.description = "Lorem ipsum2";
+vocabulary2.value = 123456;
+
+const vocabulary3 = new myDictionary<string, string, number>();
+vocabulary3.key = "key3";
+vocabulary3.description = "Lorem ipsum3";
+vocabulary3.value = 123789900;
+
+console.log(vocabulary1);
+console.log(vocabulary2);
+console.log(vocabulary3);
+
+
+// FUNCTION GENERATION
 

@@ -1,3 +1,15 @@
+// INTERFACES
+export interface Animal {
+    name?: string;
+    nutrition: string;
+    habitat: string;
+
+    drawAnimal: () => string;
+}
+
+
+
+
 // console.log("Hello flower!");
 
 // function var3() {
@@ -163,51 +175,6 @@
 // tavria.makeSound();
 
 
-// INTERFACES
-// interface Animal {
-//     name?: string;
-//     nutrition: string;
-//     habitat: string;
-
-//     drawAnimal: () => string;
-// }
-
-// class Cat implements Animal {
-//     name: string = "Cat";
-//     nutrition: string = "mice";
-//     habitat: string = "houses";
-//     drawAnimal(): string {
-//         return "Cats eat " + this.nutrition + " and live in the " + this.habitat
-//     }
-// }
-
-// class Bird implements Animal {
-//     name: string = "Bird";
-//     nutrition: string = "worms";
-//     habitat: string = "trees";
-//     drawAnimal(): string {
-//         return "Birds eat " + this.nutrition + " and live in the " + this.habitat
-//     }
-// }
-
-// class Fish implements Animal {
-//     name: string = "Fish";
-//     nutrition: string = "insects";
-//     habitat: string = "rivers";
-//     drawAnimal(): string {
-//         return "Fish eat " + this.nutrition + " and live in the " + this.habitat
-//     }
-// }
-
-// const animal1: Animal = new Cat();
-// const animal2: Animal = new Bird();
-// const animal3: Animal = new Fish();
-
-// console.log(animal1.drawAnimal());
-// console.log(animal2.drawAnimal());
-// console.log(animal3.drawAnimal());
-
-
 
 // GENERICS
 // class myDictionary<TKey, TDescription, TValue> {
@@ -270,42 +237,42 @@
 
 
 // FUNCTION GENERATION
-function* stringSequence() {
-    yield "Hello";
-    yield " ";
-    yield "!";
-    yield " ";
-    yield "It's";
-    yield " ";
-    yield "me";
-    yield "!";
-}
+// function* stringSequence() {
+//     yield "Hello";
+//     yield " ";
+//     yield "!";
+//     yield " ";
+//     yield "It's";
+//     yield " ";
+//     yield "me";
+//     yield "!";
+// }
 
-const iterable1 = stringSequence();
-let result = "";
+// const iterable1 = stringSequence();
+// let result = "";
 
-for (const item of iterable1) {
-     result += item;
-}
-console.log(result);
+// for (const item of iterable1) {
+//      result += item;
+// }
+// console.log(result);
 
-class MyStringCollection {
-    private values: string[] = ["Hello", " ", "!", " ", "It's", " ", "me", "!"];
+// class MyStringCollection {
+//     private values: string[] = ["Hello", " ", "!", " ", "It's", " ", "me", "!"];
 
-    *getValues() {
-        for (let i=0; i<this.values.length; i+=1) {
-            console.log("here");
-            yield this.values[i];
-        }
-    }
-}
+//     *getValues() {
+//         for (let i=0; i<this.values.length; i+=1) {
+//             console.log("here");
+//             yield this.values[i];
+//         }
+//     }
+// }
 
-const iterable2 = new MyStringCollection().getValues();
-result = "";
+// const iterable2 = new MyStringCollection().getValues();
+// result = "";
 
-for (const item of iterable2) {
-    result += item;
-}
-console.log(result);
-console.log(iterable2);
+// for (const item of iterable2) {
+//     result += item;
+// }
+// console.log(result);
+// console.log(iterable2);
 
